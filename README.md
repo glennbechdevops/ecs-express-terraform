@@ -30,6 +30,9 @@ Push to `main`. The workflow:
 
 ## Verify
 
+You can see the IP address and port in the AWS ECS console. Find the cluster, navigate to the service, then find the task.
+Or you can do it the DevOps way :)
+
 ```sh
 aws ecs describe-services --cluster hello-world --services hello-world --region eu-west-1 \
   --query 'services[0].{desired:desiredCount,running:runningCount,rollout:deployments[0].rolloutState}'
