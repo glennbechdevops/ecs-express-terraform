@@ -1,0 +1,17 @@
+name: Smoke test
+
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: URL to curl
+        required: true
+
+jobs:
+  curl:
+    runs-on: ubuntu-latest
+    steps:
+      - name: curl
+        run: |
+          echo "GET ${{ inputs.url }}"
+          curl -sS -i --max-time 15 "${{ inputs.url }}" || true
