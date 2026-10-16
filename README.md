@@ -17,9 +17,10 @@ Minimal end-to-end example: Spring Boot "Hello World" → Docker image → ECR �
    aws ecr create-repository --repository-name hello-world --region eu-west-1
    ```
 
-2. In the AWS account, create an IAM user with programmatic access. Attach a policy covering: ECR (push/pull), ECS, IAM (role + attachments for the task role), S3 (read/write on the state bucket), CloudWatch Logs, EC2 describe (VPC / subnets / SGs).
+
 3. Add these GitHub repo secrets: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`.
 4. Make sure the account has a default VPC in `eu-west-1`.
+5. Modify the infra/backend.tf and replace the State file with something unique to you.
 
 ## Deploy
 
