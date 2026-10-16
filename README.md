@@ -1,4 +1,4 @@
-# ecs-express-terraform
+# ECS with Terraform
 
 Minimal end-to-end example: Spring Boot "Hello World" → Docker image → ECR → ECS Fargate (no ALB), driven by a GitHub Actions workflow that passes the full image URI from the build job to the Terraform apply.
 
